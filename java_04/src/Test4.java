@@ -2,8 +2,27 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class Test4 {
+    public static void main(String[] args) {
+        int[][] array = new int[2][3];
+        for (int[] arr:
+             array) {
+            for (int x:
+                 arr) {
+                System.out.printf(x+" ");
+            }
+            System.out.println();
+        }
+    }
+    //冒泡排序性能较低，Java中内置了更高效率的排序方法
+//    Arrays.sort(); 底层不是冒泡排序，底层是快速排序
+    public static void main10(String[] args) {
+        int[] array = {1,3,6,2,6,7,2,67,87,72};
+        Arrays.sort(array);
+        System.out.println(Arrays.toString(array));
+    }
     //冒泡排序
     public static void  bubbleSort(int[] array){
+        //优化：检查某一趟之后是否有序
         //使用i控制躺数
         boolean flg = false;
         for (int i = 0; i < array.length-1; i++) {
@@ -20,7 +39,7 @@ public class Test4 {
             }
         }
     }
-    public static void main(String[] args) {
+    public static void main9(String[] args) {
         int[] array = {1,12,14,15,6,7,89,4,35,536,123};
         bubbleSort(array);
         System.out.println(Arrays.toString(array));
